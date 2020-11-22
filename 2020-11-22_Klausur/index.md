@@ -1,9 +1,7 @@
 # Klausur
 24.11.2020
 
-## ToC:
 - [Klausur](#klausur)
-  - [ToC:](#toc)
   - [Polymorphie](#polymorphie)
       - [Begriffe und Schlüsselwörter](#begriffe-und-schlüsselwörter)
           - [Superclass / Superklasse](#superclass--superklasse)
@@ -12,16 +10,11 @@
           - [Methodenüberschreibungen](#methodenüberschreibungen)
   - [Abstrakte Klassen](#abstrakte-klassen)
       - [Instanziieren von Abstrakten Klassen](#instanziieren-von-abstrakten-klassen)
-  - [Beziehungen](#beziehungen)
-    - [1:0..1](#101)
-    - [1:1](#11)
-    - [1:n](#1n)
   - [Klassendiagramm -> Java](#klassendiagramm---java)
     - [Klassen](#klassen)
       - [Person](#person)
       - [Person und Vermieter](#person-und-vermieter)
       - [Tier, Pferd und Vogel](#tier-pferd-und-vogel)
-      - [(Beziehungen)](#beziehungen-1)
     - [Endresultat](#endresultat)
 
 ---
@@ -286,80 +279,10 @@ TierAbstrakt hund3 = new TierAbstrakt(); // ⚠️ geht nicht
 
 die einzige Möglichkeit eine abstrakte Klasse zu "instanziieren" sind durch sog. "anonymous classes". Da wir das aber noch nicht im Unterricht haben, möchte ich darauf nicht weiter eingehen, da sie aber später nützlich sein können, wollte ich es nicht unerwähnt lassen.
 
-## Beziehungen
-Es gibt hauptsächlich 3 Beziehungen, die wir im Unterricht durchgenommen haben:
-* 1:0..1
-* 1:1
-* 1:n
-
-Bei jeder dieser Beziehungen wird ein neues Attribut in eine Klasse hinzugefügt, welches die jeweils andere Seite beinhaltet:
-
-![img](assets/kd3.png)
-
-### 1:0..1
-Die 1:0..1 - Beziehung ist die Einfachste. Eine Klasse beinhaltet ein oder kein Objekt der anderen Klasse.
-
-**In dem o. g. Beispiel von Konto und Person:**  
-Ein Konto hat **einen** oder **keinen** Kontoinhaber.
-
-Hierzu fügt man lediglich ein Attribut in die Klasse hinzu, bei der die "1" steht, also **Konto**, denn Konto: 1, Person: 0..1
-
-![img](assets/kt_0_01.png)
-
-```java
-class Person {
-    private String name;
-}
-class Konto {
-    private int kontonr;
-
-    // 1:0..1 Beziehung:
-    private Person inhaber;
-}
-```
-
-`Konto.inhaber` kann nun eine Person, ODER `null` sein. Also ein, oder kein Inhaber.
-
-### 1:1
-Bie der 1:1 Beziehung MUSS ein Konto einer Person zugeordnet werden:
-![img](assets/kt_1_1.png)
-
-Das wird erreicht, in dem man im **Kontruktor** daen Inhaber angeben muss:
-```java
-class Person {
-    private String name;
-}
-class Konto {
-    private int kontonr;
-
-    // 1:1 Beziehung:
-    private Person inhaber;
-
-    public Konto (Person inhaber) {
-        this.inhaber = inhaber;
-    }
-}
-```
-
-### 1:n
-Bei der 1:n Beziehung kann ein Konto beliebig viele Kontoinhaber haben.
-In dem Beispiel mal 1:10, also 1 Konto kann 10 Kontoinhaber haben. Wir sind in dem Fall auf ein Limit von 10 angewiesen, da wir die Kontoinhaber in einem Array speichern möchten, welches von uns eine größe erwartet.
-
-```java
-class Person {
-    private String name;
-}
-class Konto {
-    private int kontonr;
-
-    // 1:n (1:10) Beziehung:
-    private Person[] inhaber = new Person[10];
-}
-```
-
 ## Klassendiagramm -> Java
 Im Folgenden möchten wir dieses Klassendiagramm in Java übernehmen
 ![img](assets/kldiag-1.png)
+(Beziehugen ignorieren)
 
 Als Erstes würde ich mit der Hierachie ganz oben anfangen. Also Superklassen zuerst, welche nicht woders erben. In diesem Fall: **Person** und **Tier**. Wobei **Tier** eine direkte Beziehung hat mit einem **Anwohner** welcher von Person vererbt, also fange ich mit **Person** an, da diese Klasse "frei" von Beziehungen nach oben ist.
 
@@ -554,29 +477,6 @@ class Vogel extends Tier {
 }
 ```
 
-#### (Beziehungen)
-Zu guter Schluss noch die Beziehungen.
-
-Ein Anwohner kann beliebig viele Haustiere haben. Daher fügen wir durch die 1:n Beziehung ein Array zu Anwohner hinzu.
-
-```java
-class Anwohner extends Person {
-    private Tier[] haustiere = new Tier[512]; // z.B. 512, also max. 512 Tiere.
-    // Wichtig: Da wir aktuell nur Arrays zum Speichern einer "Liste" kennen, 
-    // umbedingt daran denken, dass Arrays eine Grenze erwarten. In dem Fall also 512.
-    // private Tier[] haustiere = new Tier[]; <-- geht nicht!
-
-    public Anwohner (String name, String adresse) {
-        super (name, adresse);
-    }
-
-    @Override
-    public void aergerMachen() {
-
-    }
-}
-```
-
 **Fertig**
 Wir haben das Klassendiagramm erfolgreich übernommen. 
 
@@ -612,8 +512,6 @@ abstract class Person {
 }
 
 class Anwohner extends Person {
-    private Tier[] haustiere = new Tier[512];
-
     public Anwohner (String name, String adresse) {
         super (name, adresse);
     }
