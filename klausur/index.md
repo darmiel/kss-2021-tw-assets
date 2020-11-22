@@ -1,21 +1,20 @@
 # Klausur
 24.11.2020
 
-- [Klausur](#klausur)
-  - [Polymorphie](#polymorphie)
-      - [Begriffe und Schlüsselwörter](#begriffe-und-schlüsselwörter)
-          - [Superclass / Superklasse](#superclass--superklasse)
-          - [super](#super)
-          - [Polymorphie](#polymorphie-1)
-          - [Methodenüberschreibungen](#methodenüberschreibungen)
-  - [Abstrakte Klassen](#abstrakte-klassen)
-      - [Instanziieren von Abstrakten Klassen](#instanziieren-von-abstrakten-klassen)
-  - [Klassendiagramm -> Java](#klassendiagramm---java)
-    - [Klassen](#klassen)
-      - [Person](#person)
-      - [Person und Vermieter](#person-und-vermieter)
-      - [Tier, Pferd und Vogel](#tier-pferd-und-vogel)
-    - [Endresultat](#endresultat)
+- [Polymorphie](#polymorphie)
+    - [Begriffe und Schlüsselwörter](#begriffe-und-schlüsselwörter)
+        - [Superclass / Superklasse](#superclass--superklasse)
+        - [super](#super)
+        - [Polymorphie](#polymorphie-1)
+        - [Methodenüberschreibungen](#methodenüberschreibungen)
+- [Abstrakte Klassen](#abstrakte-klassen)
+    - [Instanziieren von Abstrakten Klassen](#instanziieren-von-abstrakten-klassen)
+- [Klassendiagramm -> Java](#klassendiagramm---java)
+  - [Klassen](#klassen)
+    - [Person](#person)
+    - [Person und Vermieter](#person-und-vermieter)
+    - [Tier, Pferd und Vogel](#tier-pferd-und-vogel)
+  - [Endresultat](#endresultat)
 
 ---
 
