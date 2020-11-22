@@ -136,6 +136,11 @@ Mit dem `super` Schlüsselwort kann man also auch auf die "originalen" Methoden 
 Bei BMW wird so erst die Methode `anDasTeil` der Klasse `Auto` und dann erst `anDasTeil` der Klasse `BMW` aufgerufen.
 
 ###### Polymorphie
+
+> Definition (geklaut von Simon höhö):
+
+> "Polymorphie ist, wenn mehrere Klassen von einer Klasse erben, dass man die Objekte der Unterkassen z. B. alle in einem Array speichern kann [oder dem Typen der Oberklasse zuordnen kann]. Der Typ des Array[s] ist ein Objekt der Oberklasse."
+
 Nun kann man alle Haustiere durch **Polymorphie** in einem einzigen Array speichern, da alle Haustiere von der selben Klasse vererbt sind.
 ```java
 public Tier[] haustiere = new Tier[] {
