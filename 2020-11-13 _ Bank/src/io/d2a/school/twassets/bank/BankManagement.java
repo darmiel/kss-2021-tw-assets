@@ -5,11 +5,20 @@ import io.d2a.school.twassets.bank.konto.Konto;
 import io.d2a.school.twassets.bank.konto.Sparkonto;
 import io.d2a.school.twassets.bank.kunde.Kunde;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BankManagement {
 
   public final List<Kunde> kunden = new ArrayList<>();
+
+  public List<Konto> getKonten() {
+    return kunden.stream()
+        .map(Kunde::getKonten)
+        .flatMap(Collection::stream)
+        .collect(Collectors.toList());
+  }
 
   public Kunde anlegenKunde(final String name, final String vorname) {
     final Kunde kunde = new Kunde(name, vorname);

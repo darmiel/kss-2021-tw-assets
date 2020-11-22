@@ -14,6 +14,10 @@ public class Kunde {
 
   public final List<Konto> konten = new ArrayList<>();
 
+  public List<Konto> getKonten() {
+    return konten;
+  }
+
   public Kunde(final String name, final String vorname) {
     this.kundennummer = ++autonr; // auto gen kundennr
 
