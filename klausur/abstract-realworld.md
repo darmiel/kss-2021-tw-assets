@@ -1,5 +1,9 @@
 # Abstrakte Klassen (Real World Example)
-Ich wurde schon öfter gefragt, für was man "im echten Leben" nun wirklich abstrakte Klassen oder Interfaces brauchen könnte. Daher hier ein Beispiel, welches ich so oder so ähnlich schon des öfteren umgesetzt habe.
+Ich wurde schon öfter gefragt, für was man "im echten Leben" nun wirklich abstrakte Klassen oder Interfaces brauchen könnte. 
+
+Ich selber finde es auch immer besser ein "realistisches Beispiel" für etwas zu haben, damit ich "abwägen" kann, ob ich das nun lernen möchte, oder nicht.
+
+Daher hier ein Beispiel, welches ich so oder so ähnlich schon des öfteren umgesetzt habe.
 
 - [Discord Bot](#discord-bot)
   - [Command-System](#command-system)
@@ -35,8 +39,11 @@ Nun aber zu den abstrakten Klassen:
 ### Command-System
 Wir möchten für unseren Discord-Bot, der aktuell noch ziemlich unnütz ist, Befehle hinzfügen. Z. B. 
 * `!uhrzeit`,
+  * ![img](assets/cmd-uhrzeit.png)
 * `!ping`, 
+  * ![img](assets/cmd-ping.png)
 * `!hallo`
+  * ![img](assets/cmd-hallo.png)
 
 #### Der "normale" Weg
 Wollten wir diese Befehle jetzt umsetzen ohne abstrakte Klassen oder Interfaces, sähe unser Code ziemlich schnell sehr unübersichtlich aus:
