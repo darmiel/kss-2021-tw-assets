@@ -165,7 +165,7 @@ class UhrzeitCommand extends BotCommand {
   * !ping
   * Antwortet "pong!"
   */
-class PingCommand {
+class PingCommand extends BotCommand {
     @Override
     public String command() {
         return "!ping";
@@ -186,7 +186,7 @@ class PingCommand {
   * !hallo
   * Antwortet "Hallo Welt!"
   */
-class HalloCommand {
+class HalloCommand extends BotCommand {
     @Override
     public String command() {
         return "!hallo";
