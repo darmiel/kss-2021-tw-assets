@@ -11,6 +11,7 @@
           - [Methodenüberschreibungen](/klausur#methodenüberschreibungen)
   - [Abstrakte Klassen](/klausur#abstrakte-klassen)
       - [Instanziieren von Abstrakten Klassen](/klausur#instanziieren-von-abstrakten-klassen)
+      - [Real World Example](/klausur/abstract-realworld)
   - [Klassendiagramm -> Java](/klausur#klassendiagramm---java)
     - [Klassen](/klausur#klassen)
       - [Person](/klausur#person)

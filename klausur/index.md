@@ -285,7 +285,7 @@ TierAbstrakt hund3 = new TierAbstrakt(); // ⚠️ geht nicht
 die einzige Möglichkeit eine abstrakte Klasse zu "instanziieren" sind durch sog. "anonymous classes". Da wir das aber noch nicht im Unterricht haben, möchte ich darauf nicht weiter eingehen, da sie aber später nützlich sein können, wollte ich es nicht unerwähnt lassen.
 
 ##### Real World Example
-![Beispiel hier](/abstract-realworld.html)
+[Beispiel hier](/klausur/abstract-realworld)
 
 ## Klassendiagramm -> Java
 Im Folgenden möchten wir dieses Klassendiagramm in Java übernehmen
