@@ -266,7 +266,9 @@ Auch wenn der "abstrakte" Weg auf den ersten Blick nach mehr Schreibaufwand auss
 ## Anonymous classes
 Ich hatte ja mal kurz "anonymous classes" angesprochen.
 
-Sie sind die einzige möglichkeit, um abstrakte Klassen (mehr oder weniger) "instanziieren" zu können:
+Sie sind die einzige möglichkeit, um abstrakte Klassen (mehr oder weniger) "instanziieren" zu können.
+
+**⚠️: Das ist nicht ganz richtig ausgedrückt:** Es wird eine namenslose Klasse erstellt, welche die abstrakte Klasse erbt.
 
 ```java
 abstract class Shape {
