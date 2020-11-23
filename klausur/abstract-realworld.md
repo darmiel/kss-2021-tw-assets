@@ -259,3 +259,114 @@ Auch wenn der "abstrakte" Weg auf den ersten Blick nach mehr Schreibaufwand auss
 ## Anonymous classes
 Ich hatte ja mal kurz "anonymous classes" angesprochen.
 
+Stellen wir uns eine Filter Methode vor. Diese Filter-Methode möchten wir so "dynamisch" wie möglich halten. Also was wir genau Filtern möchten wir dem Nutzer der Methode überlassen:
+
+```java
+public static final String[] ARRAY = new String[] {
+    "Hallo Welt",
+    "Hallo Max",
+    "Hallo Mustermann",
+    "Wie",
+    "Gehts",
+    "Dir"
+};
+
+public void filterArray(String[] array, [? ...]) {
+    for (String a : array) {
+        if (?) {
+            System.out.println(a);
+        }
+    }
+}
+```
+
+Wir haben einen Array mit Beispieldaten und die Funktion `filterArray`. Diese Methode soll das Array von oben nach unten durchgehen und die Zeilen ausgeben, die unserem Filter entsprechen. Normalerweise müssten wir uns festlegen. Möchten wir also z.B. nach den Werten filtern, die mit `Hallo` beginnen, müsste man dafür eine neue Methode erstellen:
+
+```java
+public void filterArrayNachHallo(String[] array) {
+    for (String a : array) {
+        if (a.startsWith("Hallo")) {
+            System.out.println(a);
+        }
+    }
+}
+```
+
+wenn sie mit `Welt` endet:
+
+```java
+public void filterArrayNachWelt(String[] array) {
+    for (String a : array) {
+        if (a.endsWith("Welt")) {
+            System.out.println(a);
+        }
+    }
+}
+```
+
+und so weiter. Mit einer abstrakten Klasse (*normalerweise nutzt man dafür Interfaces, jedoch für das Beispiel nehme ich abstrakte Klassen, geht hiermit nämlich genau so gut*) sähe das ganze folgendermaßen aus:
+
+```java
+abstract class Filter {
+    public abstract boolean accept (String string);
+}
+
+public void filterArray(String[] array, Filter filter) {
+    for (String a : array) {
+        if (filter.accept(a)) {
+            System.out.println(a);
+        }
+    }
+}
+```
+
+Nun kann man den String frei filtern:
+
+```java
+public static final String[] ARRAY = new String[] {
+    "Hallo Welt",
+    "Hallo Max",
+    "Hallo Mustermann",
+    "Wie",
+    "Gehts",
+    "Dir"
+};
+
+// filtert nach Werte, welche mit "Hallo" starten
+filterArray(ARRAY, new Filter() {
+    @Override
+    public boolean accept (String string) {
+        return string.startsWith("Hallo"); 
+    }
+});
+
+// filtert nach Werte, welche mit "Welt" starten
+filterArray(ARRAY, new Filter() {
+    @Override
+    public boolean accept (String string) {
+        return string.endsWith("Welt"); 
+    }
+});
+
+// filtert nach Werte, welche mit "Hallo" starten und "Welt" enden
+filterArray(ARRAY, new Filter() {
+    @Override
+    public boolean accept (String string) {
+        return string.startsWith("Hallo") && string.endsWith("Welt"); 
+    }
+});
+
+// Filtert nach Werte, welche mind. 8 Zeichen lang sind und mit "Mustermann" enden
+filterArray(ARRAY, new Filter() {
+    @Override
+    public boolean accept (String string) {
+        int length = string.length();
+        if (length > 8) {
+            if (string.endsWith("Mustermann")) {
+                return true;
+            }
+        }
+        return false;
+    }
+});
+```
