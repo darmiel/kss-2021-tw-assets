@@ -266,6 +266,23 @@ Auch wenn der "abstrakte" Weg auf den ersten Blick nach mehr Schreibaufwand auss
 ## Anonymous classes
 Ich hatte ja mal kurz "anonymous classes" angesprochen.
 
+Sie sind die einzige möglichkeit, um abstrakte Klassen (mehr oder weniger) "instanziieren" zu können:
+
+```java
+abstract class Shape {
+    public abstract void hello();
+}
+
+// geht nicht! Fehler wird geworfen
+Shape shape = new Shape();
+
+// geht!
+Shape shape = new Shape() {
+    @Override
+    public void hello() { }
+};
+```
+
 Stellen wir uns eine Filter Methode vor. Diese Filter-Methode möchten wir so "dynamisch" wie möglich halten. Also was wir genau Filtern möchten wir dem Nutzer der Methode überlassen:
 
 ```java
