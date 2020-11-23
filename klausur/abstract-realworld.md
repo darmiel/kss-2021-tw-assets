@@ -1,6 +1,12 @@
 # Abstrakte Klassen (Real World Example)
 Ich wurde schon öfter gefragt, für was man "im echten Leben" nun wirklich abstrakte Klassen oder Interfaces brauchen könnte. Daher hier ein Beispiel, welches ich so oder so ähnlich schon des öfteren umgesetzt habe.
 
+- [Discord Bot](#discord-bot)
+  - [Command-System](#command-system)
+    - [Der "normale" Weg](#der-normale-weg)
+    - [Der "abstrakte" Weg](#der-abstrakte-weg)
+- [Anonymous classes](#anonymous-classes)
+
 ## Discord Bot
 Nehmen wir an, wir wollen einen Discord-Bot schreiben:
 
@@ -249,3 +255,7 @@ Macht man nun 10 neue Befehle, muss man diese Befehle lediglich dem Array `comma
 Auch wenn der "abstrakte" Weg auf den ersten Blick nach mehr Schreibaufwand aussieht, es wird nach nur ein paar mehr Befehlen deutlich, wie viel angenehmer dieser Weg ist.
 
 **=> Weniger Schreibearbeit und weniger Fehler anfällig (man vergisst z.B. nicht die Rechteüberprüfung, verschreibt sich, o. Ä.)**
+
+## Anonymous classes
+Ich hatte ja mal kurz "anonymous classes" angesprochen.
+
