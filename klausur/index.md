@@ -402,7 +402,7 @@ class Anwohner extends Person {
     }
 }
 class Vermieter extends Person {
-    public Anwohner (String name, String adresse) {
+    public Vermieter (String name, String adresse) {
         super (name, adresse);
     }
 }
@@ -432,7 +432,7 @@ class Anwohner extends Person {
     }
 }
 class Vermieter extends Person {
-    public Anwohner (String name, String adresse) {
+    public Vermieter (String name, String adresse) {
         super (name, adresse);
     }
 
@@ -530,7 +530,7 @@ class Anwohner extends Person {
     }
 }
 class Vermieter extends Person {
-    public Anwohner (String name, String adresse) {
+    public Vermieter (String name, String adresse) {
         super (name, adresse);
     }
 
