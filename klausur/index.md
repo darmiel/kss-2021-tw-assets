@@ -308,7 +308,7 @@ Als nächstes fügen wir die Attribute hinzu.
 Hier achten wir auf die Vorzeichen:
 * `+` -> `public`
 * `-` -> `private`
-* `~` -> `protected`
+* `#` -> `protected`
 steht nichts davor, heißt das "package", also müssen wir auch in Java nichts weiter hinschreiben.
 Diesen **Access Modifier** schreiben wir am Anfang des Attributes.
 
